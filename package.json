@@ -1,4 +1,5 @@
 {
+    "homepage": "https://tydelgado98.github.io/Garage-squad",
     "name": "garage-junkies",
     "version": "1.0.0",
     "description": "",
@@ -6,6 +7,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "seed": "node seeds/seed.js"
     },
     "keywords": [],
