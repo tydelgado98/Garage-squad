@@ -4,16 +4,18 @@ require('dotenv').config();
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
+  // Use JawsDB URL provided by Render for production environment
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
+  // Use local development configuration
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: '127.0.0.1',
+      host: process.env.DB_HOST, // Use environment variable for host
       dialect: 'mysql',
-      port: 3306
+      port: process.env.DB_PORT // Use environment variable for port
     }
   );
 }
