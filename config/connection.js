@@ -13,11 +13,12 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: process.env.DB_HOST, // Use environment variable for host
+      host: process.env.DB_HOST,
       dialect: 'mysql',
-      port: process.env.DB_PORT // Use environment variable for port
+      port: process.env.DB_PORT
     }
   );
+  
 }
 
 module.exports = sequelize;
